@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./css/bootstrap.min.css" rel="stylesheet" >
+    <script defer src="./scripts/index.js"></script>
+    <script defer src="./scripts/upload.js"></script>
+
+    <title>Home</title>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row align-items-center">
+            <div class="col-12 mb-5">
+                <div class="card">
+                    <h5 class="card-header">SPARQL Server</h5>
+                    
+                    <div class="card-body">
+                        <div id="loader" class="d-none mb-1 spinner-border text-primary" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                        <div id="upload-success-alert" class="d-none mb-1 alert alert-success">success</div>
+                        <div id="upload-danger-alert" class="d-none mb-1 alert alert-success">error</div>
+                        <div class="input-group mb-1">
+                            <input type="file" multiple class="form-control" id="filesToUpload"  aria-label="Upload">
+                            <button class="btn btn-primary" type="button" id="btn-upload">Upload RDF</button>
+                        </div>
+                      <div class="mb-0">
+                        <label for="exampleFormControlTextarea1" class="form-label">SPARQL Query</label>
+                        <textarea class="form-control" id="query-string" rows="3"></textarea>
+                      </div> 
+                    </div>
+                    <div class="card-footer ">
+                        <div class="input-group mb-0">
+                            <button class="btn btn-primary" id="execute-query" type="button">Execute</button>
+                            <select class="form-select" id="query-type" aria-label="Example select with button addon">
+                              <option selected>Type of Query</option>
+                              <option value="update">Update</option>
+                              <option value="select">Select</option>
+                              <option value="ask">Ask</option>
+                            </select>
+                          </div>
+                    </div>
+                  </div>
+            </div>
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="card-title">Result of the Query</h5>
+                    </div>
+                    <div class="card-body" id="showData">
+                      
+                      
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
